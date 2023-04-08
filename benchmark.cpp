@@ -6,7 +6,6 @@
 // usage: no command line arguments
 // set problem sizes, block sizes in the code below
 
-
 #include <algorithm>
 #include <chrono>
 #include <iomanip>
@@ -35,25 +34,28 @@ int main(int argc, char** argv)
    /* For each test size */
    for (int64_t n : problem_sizes) 
    {
-      printf("Working on problem size N=%lld \n", n);
+      printf("Working on problem size N=%d \n", n);
 
       // invoke user code to set up the problem
       setup(n, &A[0]);
 
-      // start timer
-      std::chrono::time_point<std::chrono::high_resolution_clock> start_time = std::chrono::high_resolution_clock::now();
+      // insert your timer code here
+      auto start = std::chrono::high_resolution_clock::now();
+
 
       // invoke method to perform the sum
       t = sum(n, &A[0]);
 
-      // end timer
-      std::chrono::time_point<std::chrono::high_resolution_clock> end_time = std::chrono::high_resolution_clock::now();
-
-      // calculate elapsed time and print
-      auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
-      printf("Elapsed time: %lld ms\n", elapsed_time);
-
+      // insert your end timer code here, and print out elapsed time for this problem size
+    
+      auto end = std::chrono::high_resolution_clock::now();
+      
+      std::chrono::duration<double> diff = end - start;
+      std::cout << " Time result = " << diff.count() << " s\n";    
+        
       printf(" Sum result = %lld \n",t);
+
    } // end loop over problem sizes
 }
 
+// EOF
