@@ -6,13 +6,6 @@
 // usage: no command line arguments
 // set problem sizes, block sizes in the code below
 
-//
-// (C) 2022, E. Wes Bethel
-// benchmark-* harness for running different versions of the sum study
-//    over different problem sizes
-//
-// usage: no command line arguments
-// set problem sizes, block sizes in the code below
 
 #include <algorithm>
 #include <chrono>
