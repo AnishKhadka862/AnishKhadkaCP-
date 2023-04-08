@@ -38,7 +38,7 @@ int main(int argc, char** argv)
       printf("Working on problem size N=%lld \n", n);
 
       // invoke user code to set up the problem
-      setup(n, &A[0]);
+      setup(n, &A[]);
 
       // start timer
       std::chrono::time_point<std::chrono::high_resolution_clock> start_time = std::chrono::high_resolution_clock::now();
