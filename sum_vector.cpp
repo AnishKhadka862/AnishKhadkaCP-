@@ -2,7 +2,6 @@
 #include <chrono>
 #include <iomanip>
 #include <iostream>
-#include <numeric>
 #include <random>
 #include <vector>
 #include <string.h>
@@ -11,8 +10,17 @@ void
 setup(int64_t N, uint64_t A[])
 {
    printf(" inside sum_vector problem_setup, N=%lld \n", N);
+
+   // Populate the vector with random values 
+   std::random_device rd;
+   std::mt19937 gen(rd());
+   std::uniform_int_distribution<uint64_t> dis(0, N);
+
+   for(int64_t i=0; i<N; i++)
+   {
+      A[i] = dis(gen);
+   }
    
-   std::vector<uint64_t> v(A, A + N);
 }
 
 int64_t
@@ -20,8 +28,14 @@ sum(int64_t N, uint64_t A[])
 {
    printf(" inside sum_vector perform_sum, N=%lld \n", N);
 
-   std::vector<uint64_t> v(A, A + N);
-   int64_t sum = std::accumulate(v.begin(), v.end(), 0);
+   int64_t sum = 0;
+   int indx = A[0];
+
+   for(int64_t i=0; i<N; i++)
+   {
+      sum += A[indx];
+      indx = A[indx];
+   }
 
    return sum;
 }
