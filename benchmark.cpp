@@ -50,7 +50,7 @@ int main(int argc, char** argv)
       std::chrono::time_point<std::chrono::high_resolution_clock> end_time = std::chrono::high_resolution_clock::now();
 
       // calculate elapsed time and print
-      auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+      auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
       printf("Elapsed time: %lld ms\n", elapsed_time);
 
       printf(" Sum result = %lld \n",t);
