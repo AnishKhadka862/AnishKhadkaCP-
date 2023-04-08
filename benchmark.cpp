@@ -5,6 +5,7 @@
 //
 // usage: no command line arguments
 // set problem sizes, block sizes in the code below
+//Anish Khadka csc 656 coding project 2
 
 #include <algorithm>
 #include <chrono>
